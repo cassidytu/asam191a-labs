@@ -23,3 +23,8 @@ header{
 #contents{
     grid-area: content;
 }
+
+#the_map{
+	height:80vh;
+    grid-area: main_map;
+}
