@@ -15,7 +15,7 @@ let marker2 = L.marker([34.083280, -118.073870]).addTo(map) // (3)!
 		.bindPopup('<b>Rose City Pizza in Rosemead, CA<b> <br> 3588 Rosemead Blvd, Rosemead, CA 91770 <br><br> I bet you have never had pizza like this, this pizzeria offers unique toppings based off of neighboring cuisines! I recommend getting a half Island Shrimp and half Birria or Taiwanese Popcorn Chicken pizza.')
 		.openPopup();
 
-let marker3 = L.marker([34.07, -118.07380]).addTo(map) // (3)!
+let marker3 = L.marker([34.07, -118.08]).addTo(map) // (3)!
 		.bindPopup('<b>Neighborhood Tea House in Rosemead, CA<b> <br> 4213 Rosemead Blvd h2, Rosemead, CA 91770 <br><br> Not food, but the Vietnamese inspired drinks here are refreshing and one of a kind! I recommend getting the signature Smashed Avocado Durian and Cocotaro drinks.')
 		.openPopup();
 
