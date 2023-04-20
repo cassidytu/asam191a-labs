@@ -14,5 +14,20 @@ addMarker(36,-120,'location 2','another random location')
 function addMarker(lat,lng,title,message){
     console.log(message)
     L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <h3>${message}</h3>`)
+    createButtons(lat,lng,message)
     return message
 }
+
+// create a function to add buttons
+function createButtons(lat,lng,title){
+    const newButton = document.createElement("button"); 
+    newButton.id = "button"+title; 
+    newButton.innerHTML = title; 
+    newButton.setAttribute("lat",lat); 
+    newButton.setAttribute("lng",lng); 
+    newButton.addEventListener('click', function(){
+        map.flyTo([lat,lng]); 
+    })
+    document.getElementById("contents").appendChild(newButton); 
+}
+
