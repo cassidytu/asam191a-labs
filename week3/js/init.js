@@ -1,14 +1,20 @@
-// declare the map
-const map = L.map('the_map').setView([34.0709,-118.444], 5);
+// declare the variables
+// let mapCenter = [34.0709,-118.444]
+// let zoomLevel = 5
+let mapOptions = {'center': [34.0709,-118.444],'zoom':5}
+
+// declare the map and use the variables above
+const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
+console.log(mapOptions)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-addMarker(37,-122,'home','home land!')
-addMarker(32,-118,'work','where i work land!')
-addMarker(39,-119,'location 1','random location')
-addMarker(36,-120,'location 2','another random location')
+addMarker(37,-122,'home','home land!');
+addMarker(32,-118,'work','where i work land!');
+addMarker(39,-119,'location 1','random location');
+addMarker(36,-120,'location 2','another random location');
 
 // create a function to add markers
 function addMarker(lat,lng,title,message){
@@ -31,3 +37,17 @@ function createButtons(lat,lng,title){
     document.getElementById("contents").appendChild(newButton); 
 }
 
+fetch("map.geojson")
+    .then(response => {
+        return response.json();
+    })
+    .then(data =>{
+        // Basic Leaflet method to add GeoJSON data
+        L.geoJSON(data, {
+            pointToLayer: (feature, latlng) => { 
+                return L.circleMarker(latlng, {color: feature.properties.color})
+            }
+        }).bindPopup(layer => {
+            return layer.feature.properties.place;
+        }).addTo(map)
+    });
