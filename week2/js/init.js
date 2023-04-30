@@ -1,5 +1,5 @@
 // declare variables
-let mapOptions = {'center': [34.07, -118.1],'zoom':12}
+let mapOptions = {'center': [34.07, -118.1],'zoom':11}
 
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
@@ -10,19 +10,30 @@ var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_brigh
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-//add custom marker icon
-var food = L.icon({
-    iconUrl: 'assets/food-icon.png'
-});
-
-var drink = L.icon({
-    iconUrl: 'assets/drink-icon.png'
-});
+//add custom marker icon dictionaries
+var food = {
+    "off": L.icon({iconUrl: 'assets/food-icon.png'}),
+    "on": L.icon({iconUrl: 'assets/food-on-icon.png'}),
+}; 
+var drink = {
+    "off": L.icon({ iconUrl: 'assets/drink-icon.png'}),
+    "on": L.icon({ iconUrl: 'assets/drink-on-icon.png'}),
+};
 
 // create a function to add markers
 function addMarker(lat,lng,type,title,image,message){
     console.log(message)
-    L.marker([lat,lng], {icon: type}).addTo(map).bindPopup(`<center><h2>${title}</h2></center> <center><img src="${image}" height=130vh></center> <body>${message}</body>`)
+    let marker = L.marker([lat,lng], {icon: type["off"]}).addTo(map).bindPopup(`<center><h2>${title}</h2></center> <center><img src="${image}" height=130vh></center> <body>${message}</body>`);
+
+    // hover effect for markers
+    marker.on('mouseover',function(ev) {
+        marker.setIcon(type["on"]);
+        marker.openPopup();
+    })
+    marker.on('mouseout', function(ev) {
+        marker.setIcon(type["off"]);
+        marker.closePopup();
+    })
     return message
 }
 
