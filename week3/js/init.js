@@ -56,10 +56,19 @@ fetch("map.geojson")
         // Basic Leaflet method to add GeoJSON data
         L.geoJSON(data, {
 			onEachFeature: addPopup,
-			pointToLayer: (feature, latlng) => {
-				return L.circleMarker(latlng, {
-					color: feature.properties.color,
-				});
+			pointToLayer: (feature, latlng,) => {
+                let marker = L.marker(latlng,).setIcon(L.icon({iconUrl: feature.properties.iconOff}));
+
+                // hover effect for markers
+                marker.on('mouseover',function(ev) {
+                    marker.setIcon(L.icon({iconUrl: feature.properties.iconOn}));
+                   marker.openPopup();
+               })
+               marker.on('mouseout', function(ev) {
+                   marker.setIcon(L.icon({iconUrl: feature.properties.iconOff}));
+                   marker.closePopup();
+               })
+			    return marker;
 			},
 		}).addTo(map);
     });
