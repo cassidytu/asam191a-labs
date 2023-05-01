@@ -1,53 +1,66 @@
-// declare the variables
-// let mapCenter = [34.0709,-118.444]
-// let zoomLevel = 5
-let mapOptions = {'center': [34.0709,-118.444],'zoom':5}
+// declare variables
+let mapOptions = {'center': [34.07, -118.1],'zoom':13}
 
-// declare the map and use the variables above
+// use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
-console.log(mapOptions)
+
+// Leaflet tile layer, i.e. the base map
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-addMarker(37,-122,'home','home land!');
-addMarker(32,-118,'work','where i work land!');
-addMarker(39,-119,'location 1','random location');
-addMarker(36,-120,'location 2','another random location');
+//add custom marker icon dictionaries
+var food = {
+    "off": L.icon({iconUrl: 'assets/food-icon.png'}),
+    "on": L.icon({iconUrl: 'assets/food-on-icon.png'}),
+}; 
+var drink = {
+    "off": L.icon({ iconUrl: 'assets/drink-icon.png'}),
+    "on": L.icon({ iconUrl: 'assets/drink-on-icon.png'}),
+};
 
-// create a function to add markers
-function addMarker(lat,lng,title,message){
-    console.log(message)
-    L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <h3>${message}</h3>`)
-    createButtons(lat,lng,message)
-    return message
+function createButtons(lat,lng,title){
+    const newButton = document.createElement("button"); // adds a new button
+    newButton.id = "button"+title; // gives the button a unique id
+    newButton.innerHTML = title; // gives the button a title
+    newButton.setAttribute("lat",lat); // sets the latitude 
+    newButton.setAttribute("lng",lng); // sets the longitude 
+    newButton.addEventListener('click', function(){
+        map.flyTo([lat,lng]); //this is the flyTo from Leaflet
+    })
+    document.getElementById("contents").appendChild(newButton); //this adds the button to our page.
 }
 
-// create a function to add buttons
-function createButtons(lat,lng,title){
-    const newButton = document.createElement("button"); 
-    newButton.id = "button"+title; 
-    newButton.innerHTML = title; 
-    newButton.setAttribute("lat",lat); 
-    newButton.setAttribute("lng",lng); 
-    newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng]); 
-    })
-    document.getElementById("contents").appendChild(newButton); 
+function addPopup(feature, layer) {
+	layer.bindPopup(
+		`<center><h2>${feature.properties.place}</h2></center>
+        <center><img src="${feature.properties.src}" height=130vh></center>
+        <body>${feature.properties.message}</body>`
+	);
+	createButtons(
+		feature.geometry.coordinates[1],
+		feature.geometry.coordinates[0],
+		feature.properties.place,
+	);
 }
 
 fetch("map.geojson")
-    .then(response => {
+    .then((response) => {
         return response.json();
     })
-    .then(data =>{
+    .then((data) => {
         // Basic Leaflet method to add GeoJSON data
         L.geoJSON(data, {
-            pointToLayer: (feature, latlng) => { 
-                return L.circleMarker(latlng, {color: feature.properties.color})
-            }
-        }).bindPopup(layer => {
-            return layer.feature.properties.place;
-        }).addTo(map)
+			onEachFeature: addPopup,
+			pointToLayer: (feature, latlng) => {
+				return L.circleMarker(latlng, {
+					color: feature.properties.color,
+				});
+			},
+		}).addTo(map);
     });
+

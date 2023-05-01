@@ -4,6 +4,11 @@ let mapOptions = {'center': [34.07, -118.1],'zoom':11}
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
 
+// Leaflet tile layer, i.e. the base map
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
