@@ -23,7 +23,7 @@ var drink = {
     "on": L.icon({ iconUrl: 'assets/drink-on-icon.png'}),
 };
 
-function createButtons(lat,lng,title){
+function createButtons(lat,lng,title,category){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"+title; // gives the button a unique id
     newButton.innerHTML = title; // gives the button a title
@@ -32,7 +32,12 @@ function createButtons(lat,lng,title){
     newButton.addEventListener('click', function(){
         map.flyTo([lat,lng]); //this is the flyTo from Leaflet
     })
-    document.getElementById("contents").appendChild(newButton); //this adds the button to our page.
+    
+    if (category == "food"){
+        document.getElementById("foodCol").appendChild(newButton); //this adds the button to food column of button table
+    } else {
+       document.getElementById("drinkCol").appendChild(newButton); //this adds the button to drink column of button table
+    }
 }
 
 function addPopup(feature, layer) {
@@ -45,6 +50,7 @@ function addPopup(feature, layer) {
 		feature.geometry.coordinates[1],
 		feature.geometry.coordinates[0],
 		feature.properties.place,
+        feature.properties.category,
 	);
 }
 

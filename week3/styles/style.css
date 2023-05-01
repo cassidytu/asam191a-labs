@@ -104,3 +104,11 @@ header{
 	height:80vh;
     grid-area: main_map;
 }
+
+#drinkCol{
+    vertical-align: top;
+}
+
+button{
+    display: block;
+}
