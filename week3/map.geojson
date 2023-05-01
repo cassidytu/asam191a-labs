@@ -1,1 +1,93 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"place":"Borneo Kalimantan","src":"assets/borneo.jpg","message":"<br>Rating: ⭐️⭐️⭐️⭐️⭐️ <br> 19 S Garfield Ave, Alhambra, CA 91801 <br><br> This Michelin star Indonesian and Singaporean restaurant serves the best comfort food in a causal dining environment. I recommend starting off with the Roti Prata and getting the Hookien Mie!","category":"food"},"geometry":{"coordinates":[-118.12665472388508,34.09480724365929],"type":"Point"}},{"type":"Feature","properties":{"place":"Neighborhood Tea House","src":"assets/neighbors.jpg","message":"<br>Rating: ⭐️⭐️⭐️⭐️⭐️ <br> 3588 Rosemead Blvd, Rosemead, CA 91770 <br><br> Not food, but the Vietnamese inspired drinks here are refreshing and one of a kind! I recommend getting the signature Smashed Avocado Durian and Cocotaro drink.","category":"drink"},"geometry":{"coordinates":[-118.07387572388575,34.08337824220692],"type":"Point"}},{"type":"Feature","properties":{"place":"CHICHA San Chen","src":"assets/chicha.jpg","message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 301 W Valley Blvd #116, San Gabriel, CA 91776 <br><br> A little on the pricier side, but the quality is definitely there! The drinks are made from the freshest ingridents, especially their seasonal Green Tea Latte with Taro Paste and Balls.","category":"drink"},"geometry":{"coordinates":[-118.10420098830215,34.07986613358419],"type":"Point"}},{"type":"Feature","properties":{"place":"Tasty Noodle House","src":"assets/tasty.jpg","message":"<br> Rating: ⭐️⭐️⭐️ <br> 827 W Las Tunas Dr San Gabriel, CA 91776 <br><br> This Chinese restaurant is another comfort spot that has solid food at cheap prices! I recommend the Pan-fried Pork Buns and House Beef Noodle Soup.","category":"food"},"geometry":{"coordinates":[-118.11193327116396,34.102728458194335],"type":"Point"}},{"type":"Feature","properties":{"place":"Rose City Pizza","src":"assets/pizza.jpg","message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 3588 Rosemead Blvd, Rosemead, CA 91770 <br><br> I bet you have never had pizza like this, this pizzeria offers unique toppings based off of neighboring cuisines! I recommend getting a half Island Shrimp and half Birria or Taiwanese Popcorn Chicken pizza.","category":"food"},"geometry":{"coordinates":[-118.07104827116447,34.07468291520199],"type":"Point"}},{"type":"Feature","properties":{"place":"Carnitas El Momo","src":"assets/elmomo.jpg","message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 1470 Monterey Pass Rd, Monterey Park, CA 91754 <br><br> Not Asian food, but still very yummy! Featured in the Netflix Street Food Series, this Mexican spot is a staple for everyone in the area. I recommend the usual Michoacan-style carnitas tacos and the Cucumber-Lime agua fresca.","category":"food"},"geometry":{"coordinates":[-118.1616527288362,34.04614468697169],"type":"Point"}}]}
+{"type":"FeatureCollection",
+"features":[
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Borneo Kalimantan",
+            "src":"assets/borneo.jpg",
+            "message":"<br>Rating: ⭐️⭐️⭐️⭐️⭐️ <br> 19 S Garfield Ave, Alhambra, CA 91801 <br><br> This Michelin star Indonesian and Singaporean restaurant serves the best comfort food in a causal dining environment. I recommend starting off with the Roti Prata and getting the Hookien Mie!",
+            "category":"food"
+        },
+        "geometry":{
+            "coordinates":[-118.12665472388508,34.09480724365929],"type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Neighborhood Tea House",
+            "src":"assets/neighbors.jpg",
+            "message":"<br>Rating: ⭐️⭐️⭐️⭐️⭐️ <br> 3588 Rosemead Blvd, Rosemead, CA 91770 <br><br> Not food, but the Vietnamese inspired drinks here are refreshing and one of a kind! I recommend getting the signature Smashed Avocado Durian and Cocotaro drink.",
+            "category":"drink"
+        },
+        "geometry":{
+            "coordinates":[-118.07387572388575,34.08337824220692],
+            "type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"CHICHA San Chen",
+            "src":"assets/chicha.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 301 W Valley Blvd #116, San Gabriel, CA 91776 <br><br> A little on the pricier side, but the quality is definitely there! The drinks are made from the freshest ingridents, especially their seasonal Green Tea Latte with Taro Paste and Balls.",
+            "category":"drink"
+        },
+        "geometry":{
+            "coordinates":[-118.10420098830215,34.07986613358419],
+            "type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Tasty Noodle House",
+            "src":"assets/tasty.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️ <br> 827 W Las Tunas Dr San Gabriel, CA 91776 <br><br> This Chinese restaurant is another comfort spot that has solid food at cheap prices! I recommend the Pan-fried Pork Buns and House Beef Noodle Soup.",
+            "category":"food"
+        },
+        "geometry":{
+            "coordinates":[-118.11193327116396,34.102728458194335],
+            "type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Rose City Pizza",
+            "src":"assets/pizza.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 3588 Rosemead Blvd, Rosemead, CA 91770 <br><br> I bet you have never had pizza like this, this pizzeria offers unique toppings based off of neighboring cuisines! I recommend getting a half Island Shrimp and half Birria or Taiwanese Popcorn Chicken pizza.",
+            "category":"food"
+        },
+        "geometry":{
+            "coordinates":[-118.07104827116447,34.07468291520199],
+            "type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Carnitas El Momo",
+            "src":"assets/elmomo.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 1470 Monterey Pass Rd, Monterey Park, CA 91754 <br><br> Not Asian food, but still very yummy! Featured in the Netflix Street Food Series, this Mexican spot is a staple for everyone in the area. I recommend the usual Michoacan-style carnitas tacos and the Cucumber-Lime agua fresca.",
+            "category":"food"
+        },
+        "geometry":{
+            "coordinates":[-118.1616527288362,34.04614468697169],
+            "type":"Point"
+        }
+    },
+    {
+        "type":"Feature",
+        "properties":{
+            "place":"Carnitas El Momo",
+            "src":"assets/elmomo.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 1470 Monterey Pass Rd, Monterey Park, CA 91754 <br><br> Not Asian food, but still very yummy! Featured in the Netflix Street Food Series, this Mexican spot is a staple for everyone in the area. I recommend the usual Michoacan-style carnitas tacos and the Cucumber-Lime agua fresca.",
+            "category":"food"
+        },
+        "geometry":{
+            "coordinates":[-118.1616527288362,34.04614468697169],
+            "type":"Point"
+        }
+    }
+]}

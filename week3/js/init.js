@@ -31,8 +31,9 @@ function createButtons(lat,lng,title,category){
     newButton.setAttribute("lng",lng); // sets the longitude 
     newButton.addEventListener('click', function(){
         map.flyTo([lat,lng]); //this is the flyTo from Leaflet
+        
     })
-    
+
     if (category == "food"){
         document.getElementById("foodCol").appendChild(newButton); //this adds the button to food column of button table
     } else {
