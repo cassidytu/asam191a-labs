@@ -80,13 +80,13 @@
     {
         "type":"Feature",
         "properties":{
-            "place":"Carnitas El Momo",
-            "src":"assets/elmomo.jpg",
-            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 1470 Monterey Pass Rd, Monterey Park, CA 91754 <br><br> Not Asian food, but still very yummy! Featured in the Netflix Street Food Series, this Mexican spot is a staple for everyone in the area. I recommend the usual Michoacan-style carnitas tacos and the Cucumber-Lime agua fresca.",
+            "place":"LAN Noodle",
+            "src":"assets/lan.jpg",
+            "message":"<br> Rating: ⭐️⭐️⭐️⭐️ <br> 411 E. Huntington Dr #102, Arcadia, CA 91006 <br><br> Noodles, noodles, noodles! One of the best places for hand pulled and cut noodles that are freshly made in front of you. I recommend getting the spicy beef noodle soup because it just hits the spot.",
             "category":"food"
         },
         "geometry":{
-            "coordinates":[-118.1616527288362,34.04614468697169],
+            "coordinates":[-118.02184390674604,34.140233791009464],
             "type":"Point"
         }
     }
