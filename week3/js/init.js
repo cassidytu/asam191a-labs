@@ -57,15 +57,28 @@ fetch("map.geojson")
         L.geoJSON(data, {
 			onEachFeature: addPopup,
 			pointToLayer: (feature, latlng,) => {
-                let marker = L.marker(latlng,).setIcon(L.icon({iconUrl: feature.properties.iconOff}));
+                let marker = L.marker(latlng,);
+                if (feature.properties.category == "food"){
+                    marker.setIcon(food["off"]);
+                } else {
+                    marker.setIcon(drink["off"]);
+                }
 
                 // hover effect for markers
                 marker.on('mouseover',function(ev) {
-                    marker.setIcon(L.icon({iconUrl: feature.properties.iconOn}));
+                    if (feature.properties.category == "food"){
+                        marker.setIcon(food["on"]);
+                    } else {
+                        marker.setIcon(drink["on"]);
+                    }
                    marker.openPopup();
                })
                marker.on('mouseout', function(ev) {
-                   marker.setIcon(L.icon({iconUrl: feature.properties.iconOff}));
+                    if (feature.properties.category == "food"){
+                        marker.setIcon(food["off"]);
+                    } else {
+                        marker.setIcon(drink["off"]);
+                    }
                    marker.closePopup();
                })
 			    return marker;
