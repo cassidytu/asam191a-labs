@@ -31,9 +31,7 @@ function createButtons(lat,lng,title,category){
     newButton.setAttribute("lng",lng); // sets the longitude 
     newButton.addEventListener('click', function(){
         map.flyTo([lat,lng]); //this is the flyTo from Leaflet
-        
     })
-
     if (category == "food"){
         document.getElementById("foodCol").appendChild(newButton); //this adds the button to food column of button table
     } else {
@@ -43,9 +41,7 @@ function createButtons(lat,lng,title,category){
 
 function addPopup(feature, layer) {
 	layer.bindPopup(
-		`<center><h2>${feature.properties.place}</h2></center>
-        <center><img src="${feature.properties.src}" height=130vh></center>
-        <body>${feature.properties.message}</body>`
+		`<center><h2>${feature.properties.place}</h2></center> <center><img src="${feature.properties.src}" height=130vh></center> <body>${feature.properties.message}</body>`
 	);
 	createButtons(
 		feature.geometry.coordinates[1],
@@ -92,4 +88,3 @@ fetch("map.geojson")
 			},
 		}).addTo(map);
     });
-
