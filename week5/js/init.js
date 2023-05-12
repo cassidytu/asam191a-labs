@@ -17,20 +17,19 @@ function addMarker(lat,lng,title,message){
 
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRnbtDjLj1Y7EzX9AF6e_VkcK17dvH2rR8-5kZeOTNA_HWKnEYcPNbMrBEWoDtohbHesenjfYJBNTnv/pub?output=csv"
 
-function loadData (url){
-    fetch(url)
-    .then(response => {
-        return response.json()
+function loadData(url){
+    Papa.parse(dataUrl, {
+        header: true,
+        download: true,
+        complete: results => console.log(results)
     })
-    .then(data =>{
-        // Basic Leaflet method to add GeoJSON data
-        L.geoJSON(data, {
-                pointToLayer: (feature, latlng) => { 
-                    return L.circleMarker(latlng, {color: feature.properties.color})
-                }
-            }).bindPopup(layer => {
-                return layer.feature.properties.place;
-            }).addTo(map);
+}
+
+function processData(results){
+    console.log(results)
+    results.data.forEach(data => {
+        console.log(data)
+        addMarker(data.lat,data.lng,data['Where did you get vaccinated?'],data['Have you been vaccinated?'])
     })
 }
 
