@@ -117,10 +117,12 @@ header{
 
 #foodButtons{
     grid-area: foodCol;
+    padding-right: 1%;
 }
 
 #drinkButtons{
     grid-area: drinkCol;
+    padding-left: 1%;
 }
 
 button{
