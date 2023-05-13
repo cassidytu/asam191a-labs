@@ -100,11 +100,14 @@ function processData(results){
 loadData(dataUrl);
 
 let popUp = document.getElementById("popup");
+let mapBlock = document.getElementById("the_map");
 
 function openPopup(){
     popUp.style.display = "block";
+    mapBlock.style.gridColumn = "span 1";
 }
 
 function closePopup(){
     popUp.style.display = "none";
+    mapBlock.style.gridColumn = "span 2";
 }

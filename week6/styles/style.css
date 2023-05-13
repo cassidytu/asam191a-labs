@@ -98,11 +98,16 @@ header{
 
 #contents{
     grid-area: content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main_map content";
+    display: grid;
 }
 
 #the_map{
     height:80vh;
     grid-area: main_map;
+    max-height: none;
+    max-width: none;
 }
 
 #placeForButtons{
