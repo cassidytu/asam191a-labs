@@ -98,3 +98,13 @@ function processData(results){
 }
 
 loadData(dataUrl);
+
+let popUp = document.getElementById("popup");
+
+function openPopup(){
+    popUp.style.display = "block";
+}
+
+function closePopup(){
+    popUp.style.display = "none";
+}
