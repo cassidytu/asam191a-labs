@@ -112,6 +112,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "foodButtons drinkButtons";
+    padding-bottom: 2%;
 }
 
 #foodButtons{
