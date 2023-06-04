@@ -46,7 +46,27 @@
                     <button onclick="closePopup()">Close</button>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSern6uUnJSlh3MGWiPTluq7IkhJHl-NBDALnbvp5VrBXlPXRA/viewform?embedded=true" width = 100% height=100% frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
-                <div id="the_map" style="grid-column: span 2;"></div>
+                <div id="the_map" style="grid-column: span 2;">
+                    <div id="legend"> <h2 style="text-align: center;">Legend</h2>
+                        <div id="foodLegend" >
+                            <input type="checkbox" id="foodCheckbox" checked>
+                            <label for="foodCheckbox">
+                                Food
+                                <svg height='10' width='10'>
+                                    <circle cx='5' cy='5' r='4' fill='#724993'/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div id="drinkLegend">
+                            <input type="checkbox" id="drinkCheckbox" checked>
+                            <label for="drinkCheckbox">
+                                Drinks <svg height='10' width='10'><circle cx='5' cy='5' r='4' fill='#496B93'/>
+                                </svg>
+                                
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="footer">

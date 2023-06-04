@@ -162,3 +162,23 @@ button:focus{
     align-items: center;
     justify-content: center;
 }
+
+#legend{
+  z-index: 99999;
+  background-color: #F7F6F3;
+  padding: 30px;
+  padding-bottom: 40px;    
+  position: relative;
+  width:80px;
+  border: solid;
+  border-color: #EDECE9;
+  border-width: 10px;
+
+}
+
+label {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-style: normal;
+        font-weight: 600;
+  color: #333333;
+}
